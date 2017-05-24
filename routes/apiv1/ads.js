@@ -5,6 +5,7 @@
 
 const express = require('express');
 const router = express.Router();
+const url =require('url');
 
 const mongoose = require('mongoose');
 const Ad = mongoose.model('Ad');
@@ -56,6 +57,13 @@ router.get('/', function (req, res, next) {
             error.status = 500;
             return next(error);
         }
+        rows.forEach(function (row) {
+            row.imageURL = url.format({
+                protocol: req.protocol,
+                host: req.get('host'),
+                pathname:"/images/ads/" + row.imageURL
+            });
+        });
         res.json({success:true, result: rows})
     });
 

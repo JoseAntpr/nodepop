@@ -7,6 +7,7 @@
 var mongoose = require('mongoose');
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 
 require('./models/Ad');
 require('./models/User');
@@ -43,10 +44,13 @@ function saveData(data, collection) {
    data[collectionName].forEach(function (item) {
        let newData;
        if (collectionName === 'ads'){
+           console.log(item);
            newData = new ad(item);
 
 
        }else if(collectionName === 'users'){
+           console.log(item);
+           item.clave = crypto.createHash('sha256').update(item.clave).digest('base64');
            newData = new user(item);
 
        }else{
@@ -119,8 +123,9 @@ async function main(collection, file){
         await dropCollections(collection);
         await loadJson(file, collection);
         console.log('Fin del reseteo de la colección ' + collection);
-        conn.close();
-        ('Desconectado de MongoDB ...');
+        console.log('Desconectado de MongoDB ...');
+        await conn.close();
+
     }catch(err) {
         console.log(' Se ha producido un error en el reseto de la colección ' + collection, err)
     }
@@ -130,6 +135,9 @@ async function main(collection, file){
 
 
 main('Ad', 'ads.json');
+main('User', 'users.json');
+
+
 
 
 

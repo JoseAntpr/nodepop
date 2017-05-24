@@ -1,0 +1,16 @@
+{
+  "users":[
+    {
+      "nombre": "Bruce Wayne",
+      "email": "batman@gmail.com",
+      "clave": "batmanyrobin"
+    },
+    {
+      "nombre": "Tony Stark",
+      "email": "ironman@gmail.com",
+      "clave": "avengers2016"
+
+    }
+
+  ]
+}
