@@ -1,0 +1,22 @@
+{
+  "es":{
+    "INTERNAL_ERROR": "Error interno en el servidor",
+    "NO_TOKEN_PROVIDED": "Token no proporcionado",
+    "INVALID TOKEN": "Token no valido",
+    "USER_ALREADY_EXIST": "El usuario ya existe",
+    "ERROR_SAVE": "Error al guardar el usuario en la base de datos por error en los parámetros",
+    "INVALID_PASSWORD": "La contraseña no es correcta",
+    "USER_NOT_FOUND": "El usuario no existe"
+
+
+  },
+  "en":{
+    "INTERNAL_ERROR": "Internal server error",
+    "NO_TOKEN_PROVIDED": "token no provided",
+    "INVALID TOKEN": "Invalid token",
+    "USER_ALREADY_EXIST": "User already exists",
+    "ERROR_SAVE": "Error to save user into the database",
+    "INVALID_PASSWORD": "Invalid password",
+    "USER_NOT_FOUND": "User not found"
+  }
+}

@@ -13,4 +13,11 @@ const adSchema = mongoose.Schema({
     tags:[String]
 });
 
+adSchema.statics.list = function (filter, limit, skip, cb) {
+    const query = Ad.find(filter);
+    query.limit(limit);
+    query.exec(cb)
+
+}
+
 var Ad = mongoose.model('Ad',adSchema);
