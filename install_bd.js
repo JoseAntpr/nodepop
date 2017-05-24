@@ -123,8 +123,6 @@ async function main(collection, file){
         await dropCollections(collection);
         await loadJson(file, collection);
         console.log('Fin del reseteo de la colección ' + collection);
-        console.log('Desconectado de MongoDB ...');
-        await conn.close();
 
     }catch(err) {
         console.log(' Se ha producido un error en el reseto de la colección ' + collection, err)
@@ -133,9 +131,15 @@ async function main(collection, file){
 
 }
 
+async function execute(){
+    await main('Ad', 'ads.json');
+    await main('User', 'users.json');
+    console.log("...Desconexión con MongoDB");
+    await conn.close();
+}
 
-main('Ad', 'ads.json');
-main('User', 'users.json');
+execute();
+
 
 
 
