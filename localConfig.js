@@ -14,6 +14,6 @@ module.exports = {
         availables: ['es', 'en']
     },
     bd: {
-        database: 'mongodb://127.0.0.1:27017/nodepop'
+        database: 'mongodb://nodepopUser:nodepopAdmin@localhost:27017/nodepop'
     }
 };
