@@ -1,6 +1,10 @@
 # Nodepop
 
-Es una API para venta de articulos de segunda mano
+Es una API para venta de articulos de segunda mano.
+
+La url para probar el deploy esta en la url: http://ec2-54-225-21-127.compute-1.amazonaws.com/apiv1/
+
+Imagen de prueba: http://ec2-54-225-21-127.compute-1.amazonaws.com/images/ads/iphone.png
 
 ## Requisitos
 
