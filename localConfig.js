@@ -12,5 +12,8 @@ module.exports = {
     languages: {
         default: 'en',
         availables: ['es', 'en']
+    },
+    bd: {
+        database: 'mongodb://127.0.0.1:27017/nodepop'
     }
 };

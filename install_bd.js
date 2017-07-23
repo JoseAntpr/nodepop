@@ -8,6 +8,7 @@ var mongoose = require('mongoose');
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
+const localConfig = require('../localConfig');
 
 require('./models/Ad');
 require('./models/User');
@@ -35,7 +36,7 @@ conn.once('open', function () {
     console.log("Conectado a mongodb.");
 });
 
-mongoose.connect('mongodb://127.0.0.1:27017/nodepop');
+mongoose.connect(localConfig.bd.database);
 
 
 function saveData(data, collection) {
